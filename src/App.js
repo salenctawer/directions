@@ -1,14 +1,14 @@
 import './App.css';
-import Header from './Components/Header/Header';
+import HeaderContainer from './Components/Header/HeaderContainer';
 import Map from './Components/Map/Map';
-import Sidebar from './Components/Sidebar/Sidebar';
+import SidebarContainer from './Components/Sidebar/SidebarContainer';
 
 function App() {
   return (
     <div className="App">
-      <Sidebar />
+      <SidebarContainer />
       <div className='App-container'>
-        <Header />
+        <HeaderContainer />
         <Map />
       </div>
     </div>

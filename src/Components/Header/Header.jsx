@@ -14,13 +14,21 @@ const iconStyleTwo = {
     height: '40px'
 }
 
-
-const Header = () =>{
+const Header = (props) =>{
+    const onRouteClick = () =>{
+        props.changeFlag('route')
+    }
+    const onBookmarkClick = () =>{
+        props.changeFlag('bookmarks')
+    }
+    const onBusClick = () =>{
+        props.changeFlag('bus')
+    }
     return(<div className={s.header}>
         <div className={s.header__containerIcons}>
-            <RouteIcon style={iconStyle}/>
-            <DirectionsBusIcon style={iconStyle}/>
-            <BookmarkIcon style={iconStyleTwo}/>
+            <RouteIcon style={iconStyle} onClick={onRouteClick}/>
+            <DirectionsBusIcon style={iconStyle} onClick={onBookmarkClick}/>
+            <BookmarkIcon style={iconStyleTwo} onClick={onBusClick}/>
         </div>
         <div className={s.header__account}>
             <AccountCircleIcon style={iconStyle}/>
