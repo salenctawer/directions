@@ -7,7 +7,7 @@ import s from './Header.module.scss'
 const iconStyle = {
     marginRight: '80px',
     width: '40px',
-    height: '40px'
+    height: '40px',
 }
 const iconStyleTwo = {
     width: '40px',
@@ -15,20 +15,14 @@ const iconStyleTwo = {
 }
 
 const Header = (props) =>{
-    const onRouteClick = () =>{
-        props.changeFlag('route')
-    }
-    const onBookmarkClick = () =>{
-        props.changeFlag('bookmarks')
-    }
-    const onBusClick = () =>{
-        props.changeFlag('bus')
+    const onButtonClick = (flag) =>{
+        props.changeFlag(flag)
     }
     return(<div className={s.header}>
         <div className={s.header__containerIcons}>
-            <RouteIcon style={iconStyle} onClick={onRouteClick}/>
-            <DirectionsBusIcon style={iconStyle} onClick={onBookmarkClick}/>
-            <BookmarkIcon style={iconStyleTwo} onClick={onBusClick}/>
+            <RouteIcon style={iconStyle} onClick={()=>onButtonClick('route')}/>
+            <DirectionsBusIcon style={iconStyle} onClick={()=>onButtonClick('bus')}/>
+            <BookmarkIcon style={iconStyleTwo} onClick={()=>onButtonClick('bookmarks')}/>
         </div>
         <div className={s.header__account}>
             <AccountCircleIcon style={iconStyle}/>
