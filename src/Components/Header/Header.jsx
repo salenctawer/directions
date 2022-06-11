@@ -3,6 +3,10 @@ import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
 import RouteIcon from '@mui/icons-material/Route';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import s from './Header.module.scss'
+import { useState } from 'react';
+import Form from './Form/Form';
+import { Dialog } from '@mui/material';
+
 
 const iconStyle = {
     marginRight: '80px',
@@ -15,6 +19,12 @@ const iconStyleTwo = {
 }
 
 const Header = (props) =>{
+    const [open, setOpen] = useState(false)
+
+    const handleOpen = () => setOpen(true)
+
+    const handleClose = () => setOpen(false)
+
     const onButtonClick = (flag) =>{
         props.changeFlag(flag)
     }
@@ -25,8 +35,14 @@ const Header = (props) =>{
             <BookmarkIcon style={iconStyleTwo} onClick={()=>onButtonClick('bookmarks')}/>
         </div>
         <div className={s.header__account}>
-            <AccountCircleIcon style={iconStyle}/>
+            <AccountCircleIcon style={iconStyle} onClick={handleOpen}/>
         </div>
+        <Dialog 
+            open={open}
+            onClose = {handleClose}
+        >
+            <Form />
+        </Dialog>
     </div>)
 }
 

@@ -7,7 +7,6 @@ import Bookmarks from "./Bookmarks/Bookmarks";
 
 const Sidebar = (props) => {
 
-console.log(props)
 
   const renderSwitch = (param) => {
     switch(param){
