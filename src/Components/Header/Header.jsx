@@ -41,7 +41,7 @@ const Header = (props) =>{
             open={open}
             onClose = {handleClose}
         >
-            <Form />
+            <Form handleClose={handleClose}/>
         </Dialog>
     </div>)
 }

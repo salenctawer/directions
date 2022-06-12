@@ -1,16 +1,24 @@
 import React from "react";
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import { useForm } from 'react-hook-form';
+import FormAuth from "./FormAuth/FormAuth";
+import FormReg from "./FormReg/FormReg";
+
 
 const Form = () =>{
-    const {register, handleSubmit, setValue, formState: {errors}} = useForm()
+
+    const temp = 'reg'
+
+
+    const checkForm = () =>{
+        if(temp==='reg'){
+            return <FormReg />
+        }
+        else{
+            return <FormAuth />
+        }
+    }
 
     return(<div>
-        123123
+        {checkForm()}
     </div>)
 }
 
