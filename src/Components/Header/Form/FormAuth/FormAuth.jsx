@@ -11,7 +11,7 @@ const FormAuth = () =>{
 
     return(<div>
         <form>
-          <DialogTitle>Регистрация</DialogTitle>
+          <DialogTitle>Авторизация</DialogTitle>
           <DialogContent>
             <TextField
               name="email"
