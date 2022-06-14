@@ -4,7 +4,7 @@
     align-items: center;
     padding-bottom: 16px;
     width: 438px;
-    height: 350px;
+    height: 410px;
     &__link{
         text-decoration: none;
         color: #0f7afc;
@@ -12,5 +12,13 @@
             color: #cf0000;
             border-bottom-color: rgba(208, 64, 0, 0.2);
         }
+    }
+    &__error{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+        margin-top: 5px;
+        color: red;
     }
 }

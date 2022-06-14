@@ -28,7 +28,7 @@ const FormReg = (props) => {
     <div>
       <form className={s.form} onSubmit={handleSubmit((data)=>onSubmit(data))}>
         <DialogTitle>Регистрация</DialogTitle>
-        <DialogContent>
+        <DialogContent sx={{paddingBottom: 0}}>
           <TextField
             name="email"
             {...register("email", {
@@ -44,7 +44,13 @@ const FormReg = (props) => {
             type="text"
             fullWidth
             variant="standard"
+            sx={{
+              marginTop: 2
+            }}
           />
+          <span className={s.form__error}>
+            {errors.email && errors.email.message}
+          </span>
           <TextField
             name="password"
             {...register("password", {
@@ -60,7 +66,13 @@ const FormReg = (props) => {
             type="text"
             fullWidth
             variant="standard"
+            sx={{
+              marginTop: 2
+            }}
           />
+          <span className={s.form__error}>
+            {errors.password && errors.password.message}
+          </span>
           <TextField
             name="confirmPassword"
             {...register("confirmPassword", {
@@ -69,7 +81,7 @@ const FormReg = (props) => {
                 message: "Это поле обязательно",
               },
               validate: (value) => {
-                if (watch("newPassword") != value) {
+                if (watch("password") != value) {
                   return "Пароли не совпадают";
                 }
               }
@@ -81,7 +93,13 @@ const FormReg = (props) => {
             type="text"
             fullWidth
             variant="standard"
+            sx={{
+              marginTop: 2
+            }}
           />
+          <span className={s.form__error}>
+            {errors.confirmPassword && errors.confirmPassword.message}
+          </span>
         </DialogContent>
         <Link to='/auth' className={s.form__link}>
             Авторизация
