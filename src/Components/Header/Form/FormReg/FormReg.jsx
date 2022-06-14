@@ -1,12 +1,13 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useForm } from "react-hook-form";
+import { Button } from "@mui/material";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import s from './FormReg.module.scss'
 
-const FormReg = () => {
+const FormReg = (props) => {
   const {
     register,
     handleSubmit,
@@ -15,9 +16,17 @@ const FormReg = () => {
     watch
   } = useForm();
 
+  let redirect = useNavigate()
+
+  const onSubmit = (data) =>{
+    console.log(data)
+    redirect('/')
+    props.handleClose() 
+  }
+
   return (
     <div>
-      <form>
+      <form className={s.form} onSubmit={handleSubmit((data)=>onSubmit(data))}>
         <DialogTitle>Регистрация</DialogTitle>
         <DialogContent>
           <TextField
@@ -63,12 +72,24 @@ const FormReg = () => {
             autoFocus
             margin="dense"
             id="confirmPassword"
-            label="Пароль"
+            label="Повторите пароль"
             type="text"
             fullWidth
             variant="standard"
           />
         </DialogContent>
+        <Link to='/auth' className={s.form__link}>
+            Авторизация
+          </Link>
+          <Button 
+            variant="contained"
+            type='submit'
+            sx={{
+              marginTop: 2
+            }}
+          >
+              Готово
+          </Button>
       </form>
     </div>
   );

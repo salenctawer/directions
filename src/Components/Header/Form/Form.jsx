@@ -8,7 +8,7 @@ const Form = (props) =>{
 
     return(
         <Routes>
-            <Route path='/reg' element={<FormReg />}/>
+            <Route path='/reg' element={<FormReg handleClose={props.handleClose}/>}/>
             <Route path='/auth' element={<FormAuth handleClose={props.handleClose}/>}/>
             <Route path="/" element={<Navigate to="/auth" />} />
         </Routes>
