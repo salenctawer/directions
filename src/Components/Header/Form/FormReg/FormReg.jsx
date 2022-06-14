@@ -68,6 +68,11 @@ const FormReg = (props) => {
                 value: true,
                 message: "Это поле обязательно",
               },
+              validate: (value) => {
+                if (watch("newPassword") != value) {
+                  return "Пароли не совпадают";
+                }
+              }
             })}
             autoFocus
             margin="dense"
