@@ -1,16 +1,26 @@
 import React from "react";
 import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useForm } from 'react-hook-form';
+import { Button } from "@mui/material";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import s from './FormAuth.module.scss'
 
-const FormAuth = () =>{
+
+const FormAuth = (props) =>{
     const {register, handleSubmit, setValue, formState: {errors}} = useForm()
 
+    let redirect = useNavigate()
+
+    const onSubmit = (data) =>{
+      console.log(data)
+      redirect('/')
+      props.handleClose() 
+    }
+
     return(<div>
-        <form>
+        <form className={s.form} onSubmit={handleSubmit((data)=>onSubmit(data))}>
           <DialogTitle>Авторизация</DialogTitle>
           <DialogContent>
             <TextField
@@ -46,6 +56,18 @@ const FormAuth = () =>{
               variant="standard"
             />
           </DialogContent>
+          <Link to='/reg' className={s.form__link}>
+            Регистрация
+          </Link>
+          <Button 
+            variant="contained"
+            type='submit'
+            sx={{
+              marginTop: 2
+            }}
+          >
+              Готово
+          </Button>
         </form>
       </div>)
 }

@@ -12,6 +12,7 @@ const FormReg = () => {
     handleSubmit,
     setValue,
     formState: { errors },
+    watch
   } = useForm();
 
   return (
@@ -46,6 +47,22 @@ const FormReg = () => {
             autoFocus
             margin="dense"
             id="password"
+            label="Пароль"
+            type="text"
+            fullWidth
+            variant="standard"
+          />
+          <TextField
+            name="confirmPassword"
+            {...register("confirmPassword", {
+              required: {
+                value: true,
+                message: "Это поле обязательно",
+              },
+            })}
+            autoFocus
+            margin="dense"
+            id="confirmPassword"
             label="Пароль"
             type="text"
             fullWidth

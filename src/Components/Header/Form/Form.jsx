@@ -4,12 +4,12 @@ import FormAuth from "./FormAuth/FormAuth";
 import FormReg from "./FormReg/FormReg";
 
 
-const Form = () =>{
+const Form = (props) =>{
 
     return(
         <Routes>
             <Route path='/reg' element={<FormReg />}/>
-            <Route path='/auth' element={<FormAuth />}/>
+            <Route path='/auth' element={<FormAuth handleClose={props.handleClose}/>}/>
             <Route path="/" element={<Navigate to="/auth" />} />
         </Routes>
     )
