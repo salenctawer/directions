@@ -6,6 +6,7 @@ import s from './Header.module.scss'
 import { useState } from 'react';
 import Form from './Form/Form';
 import { Dialog } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 const iconStyle = {
@@ -23,7 +24,12 @@ const Header = (props) =>{
 
     const handleOpen = () => setOpen(true)
 
-    const handleClose = () => setOpen(false)
+    let redirect = useNavigate()
+
+    const handleClose = () => {
+        setOpen(false)
+        redirect('/')
+    }
 
     const onButtonClick = (flag) =>{
         props.changeFlag(flag)
