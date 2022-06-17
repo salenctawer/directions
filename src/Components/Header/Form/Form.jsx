@@ -4,7 +4,7 @@ import FormAuth from "./FormAuth/FormAuth";
 import FormReg from "./FormReg/FormReg";
 
 
-const Form = (props) =>{
+const Form = (props) =>{ 
 
     return(
         <Routes>
