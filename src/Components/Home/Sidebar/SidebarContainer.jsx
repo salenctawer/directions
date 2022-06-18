@@ -1,4 +1,4 @@
-import { getFlag } from "../../redux/mainPageSelectors"
+import { getFlag } from "../../../redux/mainPageSelectors"
 import Sidebar from "./Sidebar"
 import { connect } from "react-redux";
 

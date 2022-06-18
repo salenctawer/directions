@@ -1,6 +1,6 @@
 import Header from "./Header"
 import { connect } from "react-redux";
-import {changeFlag} from '../../redux/mainPageReducer'
+import {changeFlag} from '../../../redux/mainPageReducer'
 
 
 
