@@ -11,7 +11,7 @@ const Sidebar = (props) => {
   const renderSwitch = (param) => {
     switch(param){
       case 'default':
-        return <Default />
+        return <Default selectPosition={props.selectPosition} setSelectPosition={props.setSelectPosition}/>
       case 'route':
         return <Route />
       case 'bookmarks':
