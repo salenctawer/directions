@@ -3,14 +3,18 @@ import Map from './Map/Map'
 import Header from './Header/HeaderContainer'
 import Sidebar from './Sidebar/SidebarContainer'
 import s from './Home.module.scss'
+import { useState } from "react"
 
 
 const Home = () =>{
+
+    const [selectPosition, setSelectPosition] = useState(null);
+
     return(<div className={s.home}>
-        <Sidebar />
+        <Sidebar selectPosition={selectPosition} setSelectPosition={setSelectPosition}/>
         <div>
             <Header />
-            <Map /> 
+            <Map selectPosition={selectPosition}/> 
         </div>
     </div>)
 }
