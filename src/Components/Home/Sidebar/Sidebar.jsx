@@ -18,6 +18,8 @@ const Sidebar = (props) => {
         return <Bookmarks />
       case 'bus':
         return <Bus />
+      case 'search':
+        return <Default selectPosition={props.selectPosition} setSelectPosition={props.setSelectPosition}/>
     }
 }
 
