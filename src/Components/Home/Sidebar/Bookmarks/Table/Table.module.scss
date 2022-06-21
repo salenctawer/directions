@@ -1,0 +1,10 @@
+.orderTable{
+    width: 100%;
+    min-width: 400px;
+    align-items: center;
+    padding: 20px;
+}
+
+.activeRow > td{
+    background-color: #ff3333 !important;
+}
