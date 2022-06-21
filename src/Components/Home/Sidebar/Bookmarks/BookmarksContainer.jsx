@@ -1,7 +1,6 @@
  import { connect } from 'react-redux'
  import Bookmarks from './Bookmarks'
- import { setCurrentActiveLocation, changeDeliveryPoint, fetchOrders } from '../../redux/wayTrackerReducer/actions'
- import { fetchLocationVariants } from '../../redux/constsReducer/actions'
+ import { setCurrentActiveLocation, changeDeliveryPoint } from '../../../../redux/mainPageReducer'
 
 let mapStateToProps = ( state ) =>{
     return{
@@ -10,6 +9,6 @@ let mapStateToProps = ( state ) =>{
     }
 }
 
-const BookmarksContainer = connect(mapStateToProps, { setCurrentActiveLocation, changeDeliveryPoint, fetchOrders, fetchLocationVariants })(Bookmarks)
+const BookmarksContainer = connect(mapStateToProps, { setCurrentActiveLocation, changeDeliveryPoint })(Bookmarks)
 
 export default BookmarksContainer

@@ -9,6 +9,7 @@ const TableSelect = (props) => {
     const { defaultValue, elementId, dataIndex,  refreshMapMarkers, changeDeliveryPoint, locationVariants } = props
     const { Option } = Select
 
+
     const tableSelectHandler = (pointId) => {
         const newDeliveryPoint = locationVariants.find(item => item.id === pointId)
         changeDeliveryPoint({
@@ -37,8 +38,9 @@ const TableSelect = (props) => {
 
 
 const OrderTable = (props) => {
-    const { orders, setCurrentActiveLocation, changeDeliveryPoint, fetchOrders, locationVariants, fetchLocationVariants, isLoading } = props
+    const { orders, setCurrentActiveLocation, changeDeliveryPoint,  locationVariants } = props
     const [isRowActive, setRowActive] = useState(null)
+
 
     const columns = [
         {
@@ -101,17 +103,12 @@ const OrderTable = (props) => {
         setRowActive(tableRow.id)
     }
 
-    useEffect(()=> {
-        fetchOrders()
-        fetchLocationVariants()
-    },[])
 
     return(
         <section className={styles.orderTable}>
             <Table
                 dataSource={orders}
                 columns={columns}
-                loading={isLoading}
                 onRow={(record, rowIndex) => {
                     return {
                         onClick: event => clickHandler(event, record),
