@@ -2,7 +2,7 @@ import * as React from 'react';
 import Default from "./Default/Default";
 import Bus from "./Bus/Bus";
 import Route from "./Route/Route";
-import Bookmarks from "./Bookmarks/Bookmarks";
+import BookmarksContainer from './Bookmarks/BookmarksContainer';
 
 
 const Sidebar = (props) => {
@@ -15,7 +15,7 @@ const Sidebar = (props) => {
       case 'route':
         return <Route />
       case 'bookmarks':
-        return <Bookmarks />
+        return <BookmarksContainer />
       case 'bus':
         return <Bus />
     }
