@@ -1,7 +1,7 @@
 const CHANGE_FLAG = 'CHANGE_FLAG'
 
 let initialState ={
-    flag: 'default',
+    flag: 'search',
 }
 
 const mainPageReducer = ( state = initialState, action ) =>{

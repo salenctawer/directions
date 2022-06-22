@@ -8,11 +8,12 @@ const params = {
   addressdetails: "addressdetails",
 };
 
-export default function Search(props) {
-  const { selectPosition, setSelectPosition } = props;
+export default function Inputs(props) {
+  const { selectFirstPosition, setSelectFirstPosition , selectSecondPosition, setSelectSecondPosition } = props;
   const [searchText, setSearchText] = useState("");
   const [listPlace, setListPlace] = useState([]);
 
+  
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <div style={{ display: "flex" }}>
@@ -66,7 +67,23 @@ export default function Search(props) {
                   button
                   onClick={() => {
                     console.log(item)
-                    setSelectPosition(item);
+                    setSelectFirstPosition(item);
+                  }}
+                >
+                  <ListItemIcon>
+                    <img
+                      src="./placeholder.png"
+                      alt="Placeholder"
+                      style={{ width: 38, height: 38 }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText primary={item?.display_name} />
+                </ListItem>
+                <ListItem
+                  button
+                  onClick={() => {
+                    console.log(item)
+                    setSelectSecondPosition(item);
                   }}
                 >
                   <ListItemIcon>
