@@ -15,14 +15,15 @@ L.Marker.prototype.options.icon = L.icon({
 
 const MapRouting = ({props}) => {
     
-    const { pick_position, deliver_position } = props.currentLocations    
+    const { selectFirstPosition, selectSecondPosition } = props
+    console.log(selectFirstPosition.lat, selectSecondPosition.lat, selectFirstPosition.lon, selectSecondPosition.lon)
     const map = useMap();
 
     useEffect(() => {
         if (!map) return
 
         const routingControl = L.Routing.control({
-            waypoints: [L.latLng(pick_position.x, pick_position.y), L.latLng(deliver_position.x, deliver_position.y)],
+            waypoints: [L.latLng(selectFirstPosition.lat, selectFirstPosition.lon), L.latLng(selectSecondPosition.lat, selectSecondPosition.lon)],
             show: false,
             draggableWaypoints: false,
         }).addTo(map);

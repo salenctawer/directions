@@ -9,8 +9,8 @@ import MapRouting from './MapRouting'
 
 
 const Map = (props) => {
-    const { pick_position } = props.currentLocations 
-    const position = ( pick_position.x ? [pick_position.x, pick_position.y] : [55.7522, 59.6156])
+    const { selectFirstPosition, selectSecondPosition } = props
+    const position = (selectFirstPosition.lat ? [selectFirstPosition.lat, selectFirstPosition.lon] : [55.7522, 59.6156])
     return(
         <section className={styles.infoMap}>
 
@@ -19,7 +19,7 @@ const Map = (props) => {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url={`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`}
                 />
-                {pick_position.x && <MapRouting props={props} />}
+                {selectFirstPosition.lat && <MapRouting props={props} />}
                 
             </MapContainer>
         </section>
