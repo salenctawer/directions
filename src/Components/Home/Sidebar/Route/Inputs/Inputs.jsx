@@ -12,6 +12,8 @@ export default function Inputs(props) {
   const { selectFirstPosition, setSelectFirstPosition , selectSecondPosition, setSelectSecondPosition } = props;
   const [searchText, setSearchText] = useState("");
   const [listPlace, setListPlace] = useState([]);
+  const [searchSecondText, setSearchSecondText] = useState("");
+  const [listSecondPlace, setListSecondPlace] = useState([]);
 
   
   return (
@@ -89,9 +91,9 @@ export default function Inputs(props) {
         <div style={{ flex: 1 }}>
           <OutlinedInput
             style={{ width: "100%" }}
-            value={searchText}
+            value={searchSecondText}
             onChange={(event) => {
-              setSearchText(event.target.value);
+              setSearchSecondText(event.target.value);
             }}
           />
         </div>
@@ -104,7 +106,7 @@ export default function Inputs(props) {
             onClick={() => {
               // Search
               const params = {
-                q: searchText,
+                q: searchSecondText,
                 format: "json",
                 addressdetails: 1,
                 polygon_geojson: 0,
@@ -118,7 +120,7 @@ export default function Inputs(props) {
                 .then((response) => response.text())
                 .then((result) => {
                   console.log(JSON.parse(result));
-                  setListPlace(JSON.parse(result));
+                  setListSecondPlace(JSON.parse(result));
                 })
                 .catch((err) => console.log("err: ", err));
             }}
@@ -129,7 +131,7 @@ export default function Inputs(props) {
       </div>
       <div>
         <List component="nav" aria-label="main mailbox folders">
-          {listPlace.map((item) => {
+          {listSecondPlace.map((item) => {
             return (
               <div key={item?.place_id}>
                 <ListItem
