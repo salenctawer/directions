@@ -3,7 +3,7 @@ import Default from "./Default/Default";
 import Bus from "./Bus/Bus";
 import Route from "./Route/Route";
 import Bookmarks from './Bookmarks/Bookmarks';
-
+import s from './Sidebar.module.scss'
 
 const Sidebar = (props) => {
 
@@ -22,7 +22,7 @@ const Sidebar = (props) => {
 }
 
   return (
-    <div>
+    <div className={s.sidebar}>
       {renderSwitch(props.flag)}
     </div>
   )
