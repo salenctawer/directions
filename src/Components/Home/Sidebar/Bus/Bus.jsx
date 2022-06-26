@@ -15,6 +15,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import styles from './Bus.module.scss'
 
 const Bus = (props) =>{
 
@@ -22,35 +24,31 @@ const Bus = (props) =>{
     useEffect(()=>{
         props.getItemsThunk()
     })
-
-    function generate(element) {
-        return [0, 1, 2].map((value) =>
-          React.cloneElement(element, {
-            key: value,
-          }),
-        );
-      }
       
-      const [dense, setDense] = React.useState(false);
-        const [secondary, setSecondary] = React.useState(false);
+    const [dense, setDense] = React.useState(false);
+    const [secondary, setSecondary] = React.useState(false);
+
 
     return(
-        <div>
+        <div className={styles.bus}>
         <Grid item xs={12} md={6}>
           <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
             Автобусные маршруты города Пермь
           </Typography>
             <List dense={dense}>
-              {generate(
+              {props.itemsBus?.map( item =>
                 <ListItem
                   secondaryAction={
                     <IconButton edge="end" aria-label="delete">
-                      <DeleteIcon />
+                      <ArrowForwardIcon />
                     </IconButton>
                   }
                 >
+                  {
+                    
+                  }
                   <ListItemText
-                    primary="Single-line item"
+                    primary={`${item.id}. ${item.checks[1]} - ${item.checks[15]}`}
                     secondary={secondary ? 'Secondary text' : null}
                   />
                 </ListItem>,
