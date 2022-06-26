@@ -1,7 +1,8 @@
-import { combineReducers, createStore } from "redux"
+import { applyMiddleware, combineReducers, createStore } from "redux"
 import bookmarksReducer from "./bookmarksReducer"
 import busReducer from "./busReducer"
 import mainPageReducer from './mainPageReducer'
+import thunkMiddleware from 'redux-thunk'
 
 let rootReducer = combineReducers({
     mainPage: mainPageReducer,
@@ -10,7 +11,7 @@ let rootReducer = combineReducers({
 })
 
 
-let store = createStore(rootReducer)
+let store = createStore(rootReducer,  applyMiddleware(thunkMiddleware))
 
 window.store = store
 
