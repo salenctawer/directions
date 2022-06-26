@@ -1,9 +1,10 @@
 import * as React from 'react';
 import Default from "./Default/Default";
-import Bus from "./Bus/Bus";
+
 import Route from "./Route/Route";
 import Bookmarks from './Bookmarks/Bookmarks';
 import s from './Sidebar.module.scss'
+import BusContainer from './Bus/BusContainer';
 
 const Sidebar = (props) => {
 
@@ -15,7 +16,7 @@ const Sidebar = (props) => {
       case 'bookmarks':
         return <Bookmarks />
       case 'bus':
-        return <Bus />
+        return <BusContainer />
       case 'search':
         return <Default/>
     }

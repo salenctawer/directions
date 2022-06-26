@@ -1,10 +1,12 @@
 import { combineReducers, createStore } from "redux"
 import bookmarksReducer from "./bookmarksReducer"
+import busReducer from "./busReducer"
 import mainPageReducer from './mainPageReducer'
 
 let rootReducer = combineReducers({
     mainPage: mainPageReducer,
-    bookMarks: bookmarksReducer
+    bookMarks: bookmarksReducer,
+    bus: busReducer
 })
 
 

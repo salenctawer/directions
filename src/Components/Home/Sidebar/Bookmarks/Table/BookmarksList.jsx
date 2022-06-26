@@ -13,12 +13,10 @@ import { Table, Select } from 'antd';
 
 const BookmarksList = (props) => {
     
-    const { orders, setCurrentActiveLocation, changeDeliveryPoint, locationVariants, isLoading } = props
-    const [isRowActive, setRowActive] = useState(null)
+    const { orders, setCurrentActiveLocation } = props
 
     
     const clickHandler = (item) => (e) =>{
-        console.log(item)
         setCurrentActiveLocation({
             pick_position: item.pick.position,
             deliver_position: item.deliver.position,            
