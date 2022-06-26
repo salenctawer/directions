@@ -6,35 +6,41 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import { Table, Select } from 'antd';
 
 
 
 
 const BookmarksList = (props) => {
     
-    console.log(props)
+    const { orders, setCurrentActiveLocation, changeDeliveryPoint, locationVariants, isLoading } = props
+    const [isRowActive, setRowActive] = useState(null)
 
-    const [dense, setDense] = React.useState(false);
-    const [secondary, setSecondary] = React.useState(false);
+    
+    const clickHandler = (item) => (e) =>{
+        console.log(item)
+        setCurrentActiveLocation({
+            pick_position: item.pick.position,
+            deliver_position: item.deliver.position,            
+        })
+    }
 
     return(
         <section className={styles.orderTable}>
-            <Grid item xs={12} md={6}>
-                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                    Закладки
-                </Typography>
-                <List dense={dense}>
-                    {props.orders?.map(item=>
-                            <ListItem>
+            {
+                orders?.map(item=>
+                    <div className={styles.row}>
+                        <ListItem onClick={clickHandler(item)}>
                             <ListItemText
-                                primary={item.deliver.name}
-                                secondary={secondary ? 'Secondary text' : null}
+                            primary={item.pick.name}
                             />
-                            </ListItem> 
-                        )
-                    }
-                </List>
-            </Grid>            
+                            <ListItemText
+                            primary={item.deliver.name}
+                            />
+                        </ListItem>  
+                    </div>
+                )
+            }           
         </section>
     )
 }

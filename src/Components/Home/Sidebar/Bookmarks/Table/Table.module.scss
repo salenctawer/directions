@@ -5,6 +5,11 @@
     padding: 20px;
 }
 
-.activeRow > td{
-    background-color: #ff3333 !important;
+
+.row{
+    display: flex;
+    &:hover{
+        opacity: 0.5;
+        cursor: pointer;
+    }
 }
