@@ -5,15 +5,17 @@ import s from './Home.module.scss'
 import { useState } from "react"
 
 
+
 const Home = () =>{
 
 
     return(<div className={s.home}>
-        <Sidebar/>
-        <div className={s.headerContainer}>
-            <Header /> 
+            <Sidebar/>
+            <div className={s.headerContainer}>
+                <Header /> 
+            </div>
         </div>
-    </div>)
+    )
 }
 
 export default Home

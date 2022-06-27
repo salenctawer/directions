@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Bus from './Bus'
-import {getItemsThunk} from '../../../../redux/busReducer'
+import {getItemsThunk, changeBusUrl} from '../../../../redux/busReducer'
 
 let mapStateToProps = ( state ) =>{
    return{
@@ -8,6 +8,6 @@ let mapStateToProps = ( state ) =>{
    }
 }
 
-const BusContainer = connect(mapStateToProps, {getItemsThunk})(Bus)
+const BusContainer = connect(mapStateToProps, {getItemsThunk, changeBusUrl})(Bus)
 
 export default BusContainer

@@ -1,13 +1,11 @@
 import * as React from 'react';
 import Default from "./Default/Default";
-
-import Route from "./Route/Route";
+import { Route, Routes } from 'react-router-dom';
 import Bookmarks from './Bookmarks/Bookmarks';
 import s from './Sidebar.module.scss'
 import BusContainer from './Bus/BusContainer';
 
 const Sidebar = (props) => {
-
 
   const renderSwitch = (param) => {
     switch(param){
@@ -21,10 +19,9 @@ const Sidebar = (props) => {
         return <Default/>
     }
 }
-
   return (
     <div className={s.sidebar}>
-      {renderSwitch(props.flag)}
+        {renderSwitch(props.flag)}
     </div>
   )
 };

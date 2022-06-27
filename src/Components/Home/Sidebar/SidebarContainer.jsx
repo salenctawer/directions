@@ -6,7 +6,8 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state) =>{
     return{
-        flag: getFlag(state)
+        flag: getFlag(state),
+        url: state.bus.busURL
     }
 }
 

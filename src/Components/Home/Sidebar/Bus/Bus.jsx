@@ -1,26 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import FolderIcon from '@mui/icons-material/Folder';
-import DeleteIcon from '@mui/icons-material/Delete';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import styles from './Bus.module.scss'
+import { useNavigate } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
+
+
 
 const Bus = (props) =>{
 
-    console.log(props)
     useEffect(()=>{
         props.getItemsThunk()
     })
@@ -28,6 +21,12 @@ const Bus = (props) =>{
     const [dense, setDense] = React.useState(false);
     const [secondary, setSecondary] = React.useState(false);
 
+    let redirect = useNavigate()
+
+    const onArrowClick = (item) => (e) =>{
+      props.changeBusUrl(item.id)
+      redirect(`/bus-route-${item.id}`)
+    }
 
     return(
         <div className={styles.bus}>
@@ -40,7 +39,7 @@ const Bus = (props) =>{
                 <ListItem
                   secondaryAction={
                     <IconButton edge="end" aria-label="delete">
-                      <ArrowForwardIcon />
+                      <ArrowForwardIcon onClick={onArrowClick(item)}/>
                     </IconButton>
                   }
                 >

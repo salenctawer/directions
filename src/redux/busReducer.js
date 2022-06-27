@@ -2,10 +2,14 @@ import itemsBus from "../data/bus"
 
 const GET_ITEMS = 'GET_ITEMS'
 
+const CHANGE_BUS_URL = 'CHANGE_BUS_URL'
+
 let initialState ={
     items:[
         
-    ]
+    ],
+    busURL:null,
+    currentBusRoute: null
 }
 
 const busReducer = ( state = initialState, action ) =>{
@@ -14,6 +18,14 @@ const busReducer = ( state = initialState, action ) =>{
             return{
                 ...state,
                 items: action.items
+            }
+        }
+        case CHANGE_BUS_URL:{
+            let obj = state.items.find(item => item.id === action.id)
+            return{
+                ...state,
+                busURL: action.id,
+                currentBusRoute: obj
             }
         }
         default:{
@@ -26,6 +38,13 @@ export const getItems = (items) =>{
     return{
         type: GET_ITEMS,
         items: items
+    }
+}
+
+export const changeBusUrl = (id) =>{
+    return{
+        type: CHANGE_BUS_URL,
+        id: id
     }
 }
 
