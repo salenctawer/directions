@@ -14,7 +14,7 @@ const Map = (props) => {
     return(
         <section className={styles.infoMap}>
 
-            <MapContainer center={position} zoom={3} className={styles.mapLayout} style={{ width: "100%", height: "100%" }}>
+            <MapContainer center={position} zoom={1} className={styles.mapLayout} style={{ width: "100%", height: "100%" }}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url={`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`}

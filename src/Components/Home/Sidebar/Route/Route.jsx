@@ -5,8 +5,8 @@ import Map from './Map/Map'
 import s from './Route.module.scss'
 
 const Route = () =>{
-    const [selectFirstPosition, setSelectFirstPosition] = useState({lat: 58.0105, lon: 56.2502});
-    const [selectSecondPosition, setSelectSecondPosition] = useState({lat: 58.0105, lon: 56.2502});
+    const [selectFirstPosition, setSelectFirstPosition] = useState({lat: 57.99063, lon: 56.2679});
+    const [selectSecondPosition, setSelectSecondPosition] = useState({lat: 57.99063, lon: 56.2679});
     console.log(`Первая${selectFirstPosition}, Вторая${selectSecondPosition}`)
     return(
         <div className={s.route}>

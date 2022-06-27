@@ -4,11 +4,11 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
 const icon = L.icon({
-  iconUrl: "./placeholder.png",
-  iconSize: [38, 38],
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+  iconSize: [23, 23],
 });
 
-const position = [58.02968, 56.26679];
+const position = [57.99063, 56.2679];
 
 function ResetCenterView(props) {
   const { selectPosition } = props;

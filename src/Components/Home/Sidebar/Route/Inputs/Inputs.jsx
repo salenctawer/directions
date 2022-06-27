@@ -74,9 +74,9 @@ export default function Inputs(props) {
                 >
                   <ListItemIcon>
                     <img
-                      src="./placeholder.png"
+                      src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png"
                       alt="Placeholder"
-                      style={{ width: 38, height: 38 }}
+                      style={{ width: 33, height: 33 }}
                     />
                   </ListItemIcon>
                   <ListItemText primary={item?.display_name} />
@@ -143,9 +143,9 @@ export default function Inputs(props) {
                 >
                   <ListItemIcon>
                     <img
-                      src="./placeholder.png"
+                      src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png"
                       alt="Placeholder"
-                      style={{ width: 38, height: 38 }}
+                      style={{ width: 33, height: 33 }}
                     />
                   </ListItemIcon>
                   <ListItemText primary={item?.display_name} />
