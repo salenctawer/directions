@@ -3,8 +3,9 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 16px;
-    width: 438px;
-    height: 410px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
     &__link{
         text-decoration: none;
         color: #0f7afc;
@@ -13,7 +14,7 @@
             border-bottom-color: rgba(208, 64, 0, 0.2);
         }
     }
-    &__error{
+    &_error{
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
