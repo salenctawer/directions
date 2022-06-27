@@ -3,8 +3,8 @@ const orders = [
         id: '1', 
         pick: {
             id: '2',
-            name: 'Moscow',
-            position: { x: 55.7522, y: 37.6156 }
+            name: 'Ленина 7',
+            position: { x: 58.017096, y: 56.257345 }
         },
         deliver: {
             id: '1',

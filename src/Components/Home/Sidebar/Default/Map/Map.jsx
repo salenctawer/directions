@@ -8,7 +8,7 @@ const icon = L.icon({
   iconSize: [38, 38],
 });
 
-const position = [51.505, -0.09];
+const position = [58.02968, 56.26679];
 
 function ResetCenterView(props) {
   const { selectPosition } = props;
@@ -36,12 +36,12 @@ export default function Map(props) {
   return (
     <MapContainer
       center={position}
-      zoom={8}
+      zoom={11}
       style={{ width: "100%", height: "100%" }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=Zr6UZV6fDTxZIQFOlq8G#0.3/42.95558/4.42610"
+        url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
       {selectPosition && (
         <Marker position={locationSelection} icon={icon}>

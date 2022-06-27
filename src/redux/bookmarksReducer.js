@@ -9,12 +9,12 @@ let initialState ={
             id: '1', 
             pick: {
                 id: '2',
-                name: 'Moscow',
-                position: { x: 55.7522, y: 37.6156 }
+                name: 'Ленина 7',
+                position: { x: 58.017096, y: 56.257345 }
             },
             deliver: {
                 id: '1',
-                name: 'Perm',
+                name: 'Луначарского 34',
                 position: { x: 58.0105, y: 56.2502 }
             },
             vehicle:'autobus',
@@ -24,13 +24,13 @@ let initialState ={
             id: '2',
             pick: {
                 id: '4',
-                name: 'Saint-P',
-                position: { x: 59.9386, y: 30.3141 }
+                name: 'Василия Татищева 6',
+                position: { x: 57.99081, y: 56.26287 }
             },
             deliver: {
                 id: '1',
-                name: 'Perm',
-                position: { x: 58.0105, y: 56.2502 }
+                name: 'Ленина 45 (ЦУМ)',
+                position: { x: 58.01155, y: 56.23725 }
             },
             vehicle:'car', 
             price: 300,
@@ -39,13 +39,13 @@ let initialState ={
             id: '3', 
             pick: {
                 id: '3',
-                name: 'Samara',
-                position: { x: 53.2022, y :50.1596 }
+                name: 'Парковый 34',
+                position: { x: 57.99782, y :56.15501 }
             },
             deliver: {
                 id: '7',
-                name: 'Sochi',
-                position: { x: 43.5992, y: 39.7257 }
+                name: 'Ленина 53 (Театр-Театр) ',
+                position: { x: 58.0081, y: 56.2161 }
             },
             vehicle:'airplane', 
             price: 300,
@@ -54,83 +54,16 @@ let initialState ={
             id: '4', 
             pick: {
                 id: '5',
-                name: 'Kazan',
-                position: { x: 55.7887, y: 49.1221 }
+                name: 'Ким 107',
+                position: { x: 58.01658, y: 56.28352 }
             },
             deliver: {
                 id: '2',
-                name: 'Moscow',
-                position: { x: 55.7522, y: 37.6156 }
+                name: 'Монастырская 43',
+                position: { x: 58.01574, y: 56.23665 }
             }, 
             vehicle:'autobus',
             price: 300,
-        },
-        {
-            id: '5', 
-            pick: {
-                id: '1',
-                name: 'Perm',
-                position: { x: 58.0105, y: 56.2502 }
-            },
-            deliver: {
-                id: '6',
-                name: 'Omsk',
-                position: { x: 54.9924, y: 73.3686 }
-            },
-            vehicle:'autobus', 
-            price: 300,
-        },
-        {
-            id: '6', 
-            pick: {
-                id: '4',
-                name: 'Saint-P',
-                position: { x: 59.9386, y: 30.3141 }
-            }, 
-            deliver: {
-                id: '1',
-                name: 'Perm',
-                position: { x: 58.0105, y: 56.2502 }
-            },
-            vehicle:'car', 
-            price: 300,
-        },
-    ],
-    locationVariants:[
-        {
-            id: '1',
-            name: 'Perm',
-            position: { x: 58.0105, y: 56.2502 }
-        },
-        {
-            id: '2',
-            name: 'Moscow',
-            position: { x: 55.7522, y: 37.6156 }
-        },
-        {
-            id: '3',
-            name: 'Samara',
-            position: { x: 53.2022, y :50.1596 }
-        },
-        {
-            id: '4',
-            name: 'Saint-P',
-            position: { x: 59.9386, y: 30.3141 }
-        },
-        {
-            id: '5',
-            name: 'Kazan',
-            position: { x: 55.7887, y: 49.1221 }
-        },
-        {
-            id: '6',
-            name: 'Omsk',
-            position: { x: 54.9924, y: 73.3686 }
-        },
-        {
-            id: '7',
-            name: 'Sochi',
-            position: { x: 43.5992, y: 39.7257 }
         },
     ],
     currentLocations: {
