@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import styles from './Bus.module.scss'
 import { useNavigate } from "react-router-dom";
-import { Route, Routes } from 'react-router-dom';
 
 
 

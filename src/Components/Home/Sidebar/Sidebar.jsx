@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Default from "./Default/Default";
-import { Route, Routes } from 'react-router-dom';
 import Bookmarks from './Bookmarks/Bookmarks';
 import s from './Sidebar.module.scss'
 import BusContainer from './Bus/BusContainer';
+import Route from './Route/Route'
 
 const Sidebar = (props) => {
 
