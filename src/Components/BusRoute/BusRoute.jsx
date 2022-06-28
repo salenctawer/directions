@@ -15,10 +15,7 @@ const BusRoute = (props) =>{
 
 
     return (<div className={styles.busRoute}>
-        <div >
-        <Link href="#" underline="none" onClick={()=>redirect('/')}>
-            {'На начальную страницу'}
-        </Link>
+        <div>
             Направление {props.item.checks[15]} - {props.item.checks[1]}
             {props.item.timeFirstDirection?.map(item=>
                     <div>
@@ -73,6 +70,9 @@ const BusRoute = (props) =>{
                     </div>
                 )}
         </div>
+        <Link href="#" underline="none" onClick={()=>redirect('/')} >
+            {'На начальную страницу'}
+        </Link>
         <div>
             Направление {props.item.checks[1]} - {props.item.checks[15]}
             {props.item.timeSecondDirection?.map(item=>

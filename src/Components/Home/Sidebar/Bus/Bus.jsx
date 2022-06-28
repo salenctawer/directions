@@ -53,6 +53,10 @@ const Bus = (props) =>{
               )}
             </List>
         </Grid>
+        <div className={styles.arrow}>
+          <span>1</span>
+          <ArrowForwardIcon />
+        </div>
         </div>
     )
 }
